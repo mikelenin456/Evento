@@ -36,7 +36,7 @@
                             <li class="nav-item"><a class="nav-link" href="{{ url('/admin/usuarios') }}">Gestion de Usuarios</a></li>
                         
                         @elseif(Auth::user()->rol === "usuario")
-                        <li class="nav-item"><a class="nav-link" href="{{ url('/eventos') }}"></a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/eventos') }}">Eventos</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ url('/inscripciones') }}">Mis inscripciones</a></li>
                     </ul>
                         @endif  
