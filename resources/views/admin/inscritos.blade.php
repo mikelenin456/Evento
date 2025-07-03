@@ -2,20 +2,18 @@
 
 @section('content')
 <div class="container">
-    <h1>Mis Inscripciones</h1>
+    <h1>Usuarios inscritos al evento: {{ $evento->titulo }}</h1>
 
     @if(count($inscripciones) > 0)
         <ul class="list-group">
             @foreach($inscripciones as $inscripcion)
                 <li class="list-group-item">
-                    <h5>{{ $inscripcion->evento->titulo }}</h5>
-                    <p>{{ $inscripcion->evento->descripcion }}</p>
-                    <small>Fecha: {{ $inscripcion->evento->fecha }}</small>
+                    {{ $inscripcion->usuario->name }} — {{ $inscripcion->usuario->email }}
                 </li>
             @endforeach
         </ul>
     @else
-        <p>No tienes eventos inscritos.</p>
+        <p>No hay usuarios inscritos en este evento.</p>
     @endif
 </div>
 @endsection

@@ -33,11 +33,12 @@
                     @auth
                         @if(Auth::user()->rol === "admin")
                             <li class="nav-item"><a class="nav-link" href="{{ url('/admin/eventos') }}">Gestion de Eventos</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ url('/admin/usuarios') }}">Gestion de Usuarios</a></li>
+                            {{-- <a class="nav-link" href="{{ url('/admin/usuarios') }}">Gestion de Usuarios</a> --}}
                         
                         @elseif(Auth::user()->rol === "usuario")
-                        <li class="nav-item"><a class="nav-link" href="{{ url('/eventos') }}"></a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ url('/inscripciones') }}">Mis inscripciones</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/eventos') }}">Eventos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('mis.inscripciones') }}">Mis inscripciones</a></li>
+
                     </ul>
                         @endif  
                     @endauth
